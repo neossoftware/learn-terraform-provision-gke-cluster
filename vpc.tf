@@ -6,6 +6,16 @@ variable "region" {
   description = "region"
 }
 
+variable "min_count" {
+  type        = number
+  description = "Minimum number of nodes in the NodePool. Must be >=0 and <= max_node_count."
+}
+
+variable "max_count" {
+  type        = number
+  description = "Maximum number of nodes in the NodePool. Must be >= min_node_count."
+}
+
 provider "google" {
   project = var.project_id
   region  = var.region
